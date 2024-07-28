@@ -26,7 +26,7 @@ chrome.omnibox.onInputEntered.addListener(async (text, disposition) => {
       const url = await response.text();
       return { redirectUrl: url };
     } catch (error) {
-      console.error('Error:', error);
+      console.error('Error :', error);
       return { redirectUrl: null };
     }
   }

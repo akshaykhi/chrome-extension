@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Go Link Handler",
+  "name": "Go Link  Handler",
   "version": "1.0",
   "permissions": [
     "tabs"
