@@ -2,6 +2,7 @@ chrome.omnibox.onInputEntered.addListener(async (text, disposition) => {
       const shortlink = text;
       try {
         const redirect = await getRedirectUrl(shortlink);
+        console.log(redirect);
         if (redirect.redirectUrl) {
           chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
             if (tabs.length > 0) {
@@ -17,7 +18,7 @@ chrome.omnibox.onInputEntered.addListener(async (text, disposition) => {
   
   async function getRedirectUrl(text) {
     try {
-      const response = await fetch(`http://localhost:8081/go/${text}`, {
+      const response = await fetch(`https://lloyds-hack-grp-18.el.r.appspot.com/go/${text}`, {
         method: 'GET',
         mode: 'cors'
       });
